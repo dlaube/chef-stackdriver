@@ -36,8 +36,17 @@ when 'rhel', 'centos', 'amazon'
 when 'ubuntu'
 
   # Create the StackDriver apt repo list
-  remote_file "/etc/apt/sources.list.d/stackdriver.list" do
-    source node[:stackdriver][:repo_url]
+  template "/etc/apt/sources.list.d/stackdriver.list" do
+    source "stackdriver.list.apt.erb"
+    mode "0644"
+    owner "root"
+    group "root"
+    action :create
   end
 
+  #update the local package list
+  execute "stackdriver-apt-get-update" do
+    command "apt-get update"
+    action :nothing
+  end
 end
