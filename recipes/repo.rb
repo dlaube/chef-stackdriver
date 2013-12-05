@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: stackdriver
-# Recipe:: repo 
+# Recipe:: repo
 # License:: MIT License
 #
 # Copyright 2013, StackDriver

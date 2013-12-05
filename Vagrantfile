@@ -21,11 +21,19 @@ Vagrant.configure("2") do |config|
                 :api => {
                     :key => "MahSekritKey",
                 },
+                :plugins => {
+                    :active => [
+                        'elasticsearch',
+                        'nginx',
+                        'mongodb',
+                    ],
+                },
             },
         }
 
         chef.run_list = [
-            "recipe[stackdriver::default]"
+            "recipe[stackdriver::default]",
+            "recipe[stackdriver::plugins]",
         ]
     end
 end
