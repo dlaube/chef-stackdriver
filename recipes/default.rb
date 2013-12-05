@@ -23,6 +23,15 @@ template "/etc/sysconfig/stackdriver" do
   action :create
 end
 
+# Create stackdriver collectd config
+cookbook_file  "/opt/stackdriver/collectd/etc/collectd.conf" do
+  source "collectd.conf"
+  mode 00644
+  owner "root"
+  group "root"
+  action :create
+end
+
 # Enable and start the service
 service "stackdriver-agent" do
   supports :status => true, :restart => true, :reload => true

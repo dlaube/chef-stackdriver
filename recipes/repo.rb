@@ -29,5 +29,3 @@ cookbook_file "/etc/yum.repos.d/stackdriver.repo" do
   notifies :run, "execute[create-yum-cache]", :immediately
   notifies :create, "ruby_block[internal-yum-cache-reload]", :immediately
 end
-
-
