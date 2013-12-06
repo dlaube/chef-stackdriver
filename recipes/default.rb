@@ -5,8 +5,9 @@
 #
 # Copyright 2013, Stackdriver
 #
-# All rights reserved 
+# All rights reserved
 #
+
 include_recipe "stackdriver::repo"
 
 # Install the stack driver agent
@@ -24,7 +25,7 @@ template "/etc/sysconfig/stackdriver" do
 end
 
 # Create stackdriver collectd config
-cookbook_file  "/opt/stackdriver/collectd/etc/collectd.conf" do
+cookbook_file  "/opt/stackdriver/collectd/etc/collectd.conf.tmpl" do
   source "collectd.conf"
   mode 00644
   owner "root"

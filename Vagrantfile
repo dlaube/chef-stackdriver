@@ -26,6 +26,7 @@ Vagrant.configure("2") do |config|
                         'elasticsearch',
                         'nginx',
                         'mongodb',
+                        'rabbitmq',
                     ],
                 },
             },
