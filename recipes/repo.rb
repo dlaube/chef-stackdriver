@@ -5,7 +5,7 @@
 #
 # Copyright 2013, StackDriver
 #
-# All rights reserved 
+# All rights reserved
 #
 
 # Re-make the yum cache vi command resource

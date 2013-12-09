@@ -23,6 +23,10 @@ node['stackdriver']['plugins']['active'].each do |plugin|
 end
 
 
+if node['stackdriver']['plugins']['active'].include?('tomcat')
+    include_recipe "stackdriver::jmxtrans"
+end
+
 if node['stackdriver']['plugins']['active'].include?('nginx')
   template "/etc/nginx/conf.d/stackdriver_status.conf" do
     source "nginx.status.conf.erb"

@@ -7,7 +7,7 @@
 default['stackdriver']['api']['key'] = "YOUR_API_KEY_HERE"
 default['stackdriver']['collectd']['config'] = "yes"
 
-# supported plugins: ['elasticsearch', 'nginx', 'mongodb', 'rabbitmq']
+# supported plugins: ['elasticsearch', 'nginx', 'mongodb', 'rabbitmq', 'tomcat']
 default['stackdriver']['plugins']['active'] = []
 
 default['stackdriver']['plugins']['elasticsearch']['requires'] = ['yajl']
@@ -30,3 +30,8 @@ default['stackdriver']['plugins']['rabbitmq']['vhosts'] = [
     ],
   },
 ]
+
+default['stackdriver']['plugins']['tomcat']['requires'] = []
+default['stackdriver']['plugins']['tomcat']['jmx']['port'] = 1099
+default['stackdriver']['plugins']['tomcat']['jmx']['host'] = 'localhost'
+default['stackdriver']['plugins']['tomcat']['jmxtrans_jar_url'] = 'https://s3.amazonaws.com/stackrpms/jmxtrans/jmxtrans-all.jar'
