@@ -17,6 +17,9 @@ default['stackdriver']['plugins']['mongodb']['port'] = 27017
 default['stackdriver']['plugins']['mongodb']['requires'] = []
 
 default['stackdriver']['plugins']['nginx']['requires'] = []
+# add config file to /etc/nginx/conf.d to create endpoint for nginx status plugin
+default['stackdriver']['plugins']['nginx']['add_nginx_status_endpoint'] = false
+default['stackdriver']['plugins']['nginx']['status_endpoint_path'] = "/nginx_status"
 
 default['stackdriver']['plugins']['rabbitmq']['auth']['user'] = 'guest'
 default['stackdriver']['plugins']['rabbitmq']['auth']['pass'] = 'guest'

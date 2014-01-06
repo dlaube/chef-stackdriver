@@ -27,7 +27,7 @@ if node['stackdriver']['plugins']['active'].include?('tomcat')
     include_recipe "stackdriver::jmxtrans"
 end
 
-if node['stackdriver']['plugins']['active'].include?('nginx')
+if node['stackdriver']['plugins']['active'].include?('nginx') and node['stackdriver']['plugins']['nginx']['add_nginx_status_endpoint']
   template "/etc/nginx/conf.d/stackdriver_status.conf" do
     source "nginx.status.conf.erb"
     mode "0644"
