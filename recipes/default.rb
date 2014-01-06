@@ -5,8 +5,9 @@
 #
 # Copyright 2013, Stackdriver
 #
-# All rights reserved 
+# All rights reserved
 #
+
 include_recipe "stackdriver::repo"
 
 # Install the stack driver agent

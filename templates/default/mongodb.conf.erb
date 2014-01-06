@@ -1,0 +1,14 @@
+LoadPlugin mongodb
+
+<Plugin "mongodb">
+    Host "localhost"
+    Port "<%= node['stackdriver']['plugins']['mongodb']['port'] %>"
+
+   #  If you restricted access to the database, you can
+   #  set the username and password here
+   #  User "user_name"
+   #  Password "user_password"
+
+   # For performance/eventually consistent trade-offs you may add this line
+   AllowSecondaryQuery <%= node['stackdriver']['plugins']['mongodb']['allow_secondary_query'] %>
+</Plugin>

@@ -1,11 +1,11 @@
 #
 # Cookbook Name:: stackdriver
-# Recipe:: repo 
+# Recipe:: repo
 # License:: MIT License
 #
 # Copyright 2013, StackDriver
 #
-# All rights reserved 
+# All rights reserved
 #
 
 # Re-make the yum cache vi command resource
@@ -29,5 +29,3 @@ cookbook_file "/etc/yum.repos.d/stackdriver.repo" do
   notifies :run, "execute[create-yum-cache]", :immediately
   notifies :create, "ruby_block[internal-yum-cache-reload]", :immediately
 end
-
-
